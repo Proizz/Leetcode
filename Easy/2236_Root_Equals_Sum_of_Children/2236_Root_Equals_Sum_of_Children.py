@@ -1,28 +1,24 @@
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def checkTree(root: TreeNode) -> bool:
+    return (root.right.val + root.left.val) == root.val
+
+
 class Solution:
-
-    def romanToInt(s: str) -> int:
-        ro_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        sum_int = 0
-        for i, char in enumerate(s):
-            if i < len(s)-1:
-                if char == 'I' and (s[i + 1] == 'V' or s[i + 1] == 'X'):
-                    sum_int -= ro_dict.get(char)
-                    continue
-                if char == 'X' and (s[i + 1] == 'L' or s[i + 1] == 'C'):
-                    sum_int -= ro_dict.get(char)
-                    continue
-                if char == 'C' and (s[i + 1] == 'D' or s[i + 1] == 'M'):
-                    sum_int -= ro_dict.get(char)
-                    continue
-            sum_int += ro_dict.get(char)
-        return sum_int
+    pass
 
 
-s = "III"
-print(Solution.romanToInt(s))
+root = [10, 4, 6]
+my_tree = TreeNode(root[0], TreeNode(root[1]), TreeNode(root[2]))
+# left and right branches are new TreeNode Objects with its values and two branches pointing at None
+print(checkTree(my_tree))
 
-s = "LVIII"
-print(Solution.romanToInt(s))
-
-s = "MCMXCIV"
-print(Solution.romanToInt(s))
+root = [5, 3, 1]
+my_tree = TreeNode(root[0], TreeNode(root[1]), TreeNode(root[2]))
+print(checkTree(my_tree))
