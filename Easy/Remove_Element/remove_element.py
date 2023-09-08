@@ -16,4 +16,5 @@ for i in range(leng):
         if nums[i] != val:
             break
 print(leng)
+print("Commited with wrong text, here is a change")
 
