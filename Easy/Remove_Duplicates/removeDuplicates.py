@@ -13,7 +13,6 @@ def removeDuplicates(nums) -> int:
         if nums[i] != nums[i+1]:
             nums[pointer] = nums[i+1]
             pointer += 1
-            print("Wechsel")
         i+=1
 
     # count length
